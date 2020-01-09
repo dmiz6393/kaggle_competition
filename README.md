@@ -47,15 +47,15 @@ Before you begin working on this project, please do the following:
 
 ## Submission
 
-Materials must be submitted by the beginning of class on **Friday, October 4**.
+Materials must be submitted by the beginning of class on **Friday, January 17**.
 
-The last day for the Kaggle competition will be **Friday, October 4**.
+The last day for the Kaggle competition will be **Friday, January 17**.
 
 Your technical report will be hosted on Github Enterprise. Make sure it includes:
 
 - A README.md (that isn't this file)
 - Jupyter notebook(s) with your analysis and models (renamed to describe your project)
-- At least one successful prediction submission on [DSI-US-9 Regression Challenge](https://www.kaggle.com/c/dsi-us-9-project-2-regression-challenge) --  you should see your name in the "[Leaderboard](https://www.kaggle.com/c/dsi-us-9-project-2-regression-challenge/leaderboard)" tab.
+- At least one successful prediction submission on [DSI-SMD-1 Regression Challenge](https://www.kaggle.com/c/dsi-smd-1-project-2-regression-challenge) --  you should see your name in the "[Leaderboard](https://www.kaggle.com/c/dsi-smd-1-project-2-regression-challenge/leaderboard)" tab.
 - Data files
 - Presentation slides
 - Any other necessary files (images, etc.)
