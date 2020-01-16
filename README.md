@@ -13,7 +13,7 @@ Our success can be validated if we are able to answer the following:
 2. What features correlated with higher selling houses? 
 3. Where should we invest our time and money? 
 
-## The Modeling Process
+## The Modeling Process and Executive Summary
 
 We analyzed and cleaned the data, then built a model using the following process: 
 
@@ -29,11 +29,11 @@ We analyzed and cleaned the data, then built a model using the following process
     - Year sold didn't seem to make a significant difference in saleprice (surprisingly, given that one of these years was 2008 when the financial crisis occured)
     - We one hot encoded neighborhood and house style. 
 3. Feature Engineering/ polynomial features 
-    - We investigated whether or not there were stronger correlations with saleprice if we combined features such as garage cars, garage area, kitchen quality and kitchen abvgr. We did this for both train and test data and found there were stronger correlations when we put our features together! 
+    - We investigated whether or not there were stronger correlations with saleprice if we combined features such as garage cars, garage area, kitchen quality and kitchen number of kitchens. We did this for both train and test data and found there were stronger correlations when we put our features together! 
 
-## Submission and Conclusion
+## Conclusions, Limitations, and Future Work
 
-Initially, I used the linear regression model here, this data (for the most part) follows the MLR assumptions, and we are predicting a continuous outcome (saleprice) as well as impact of features on saleprice. In order to prevent our data from being overfit, I've also used Lasso and Ridge. There isn't a significant difference between the scores. We did not train-test-split here because we wanted to train our model with the data available to us. 
+Initially, I used the linear regression model; this data (as much as it could) follows the MLR assumptions, and we are predicting a continuous outcome (saleprice) as well as impact of features on saleprice. In order to prevent our data from being overfit, I've also used Lasso and Ridge. There isn't a significant difference between the scores. We did not train-test-split here because we wanted to train our model with the data available to us. Potential downfalls of this model are that it could be too simplistic - there are many factors that go into the sale price of a house that this model might not take into account, such as the economy. We also risk not understanding what is truly important to the saleprice of the house.
 
 It seems like there is potential for us to make a profit off of buying, renovating and selling houses in Ames Iowa. I believe the investor was right in coming to me and my team with this opportunity. 
 
@@ -53,9 +53,6 @@ I believe we can be profitable if we focus our attention on:
 - Buying houses that are big/ have higher square footage in neighborhoods where houses are higher valued in general
 - Renovate house so we can have a high rank in quality and condition 
 - Ensure garage quality is up to par, and if house does not have a garage, build a garage that can fit at least two cars for it 
-- Although the year remodeling/ additions will work in our favor - since our renovations will update the year! 
+- Renovations alone on the house will increase the value! 
 
-For further investigation, we would need to do some hypothesis testing. I am going to continue to feature engineer to see if we've missed any important features that, when put together, impact price. I'd also like to experiment with cleaning the data differently - perhaps using the mean scores for some rows wasn't the best approach. I would also add the above ground square footage and below ground square footage to get the total square footage and add this as a potential feautre in my model. 
-
-
-
+For further investigation, we would need to do some hypothesis testing. I am going to continue to feature engineer to see if we've missed any important features that, when put together, impact price. I'd also like to experiment with cleaning the data differently - perhaps using the mean scores for some rows wasn't the best approach. I would also add the above ground square footage and below ground square footage to get the total square footage and add this as a potential feautre in my model. We were limited in valuable information such as average age of house (investopedia predicted that this was an important factor in sales price). 
