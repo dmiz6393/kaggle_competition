@@ -1,43 +1,30 @@
-# Project 2 - Ames Housing Data and Kaggle Challenge
+# Project 2 - Ames Housing Data 
 
-Welcome to Project 2! It's time to start modeling.
 
-**Primary Learning Objectives:**
-1. Creating and iteratively refining a regression model
-2. Using [Kaggle](https://www.kaggle.com/) to practice the modeling process
-3. Providing business insights through reporting and presentation.
 
-You are tasked with creating a regression model based on the Ames Housing Dataset. This model will predict the price of a house at sale.
+## Problem Statement
 
-The Ames Housing Dataset is an exceptionally detailed and robust dataset with over 70 columns of different features relating to houses.
+An investor has approached my construction company; she thinks there is an opportunity in Ames, Iowa to buy,refurnish and sell houses or buy land and build from scratch. He'd like to know what the biggest predictors are of higher valued houses, and if location matters. If there is an opportunity, she'd like to work with my construction company to begin the work together. 
 
-Secondly, we are hosting a competition on Kaggle to give you the opportunity to practice the following skills:
-
-- Refining models over time
-- Use of train-test split, cross-validation, and data with unknown values for the target to simulate the modeling process
-- The use of Kaggle as a place to practice data science
-
-As always, you will be submitting a technical report and a presentation. **You may find that the best model for Kaggle is not the best model to address your data science problem.**
-
-## Set-up
-
-Before you begin working on this project, please do the following:
-
-1. Sign up for an account on [Kaggle](https://www.kaggle.com/)
-1
-3. Review the material on the [DSI-SMD-10 Regression Challenge](https://www.kaggle.com/c/dsi-smd-1-project-2-regression-challenge)
-4. Review the [data description](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt).
+Luckily, there is a data set that can help us answer these questions! The data dictionary used in this data analysis can be found here: http://jse.amstat.org/v19n3/decock/DataDocumentation.txt 
 
 ## The Modeling Process
 
-1. The train dataset has all of the columns that you will need to generate and refine your models. The test dataset has all of those columns except for the target that you are trying to predict in your Regression model.
-2. Generate your regression model using the training data. We expect that within this process, you'll be making use of:
-    - train-test split
-    - cross-validation / grid searching for hyperparameters
-    - strong exploratory data analysis to question correlation and relationship across predictive variables
-    - code that reproducibly and consistently applies feature transformation (such as the preprocessing library)
-3. Predict the values for your target column in the test dataset and submit your predictions to Kaggle to see how your model does against unknown data.
-    - **Note**: Kaggle expects to see your submissions in a specific format. Check the challenge's page to make sure you are formatting your CSVs correctly!
+We analyzed and cleaned the data, then built a model using the following process: 
+
+1. Cleaning the data
+    - We found that some ordinal and nominal values had NaN, instead of NA. We replaced this with either NA or None (indicated in the data dictionary). 
+    - Other null values such as Lot Frontage or Garage Yr Built were replaced with mean values of those columns (there wasn't a sigificant difference between mean and median values). 
+    - The rest of the null values were dropped, being that there were only 1 or 2 of them in each respective remaining category. 
+    - We also made sure to lowercase and remove spaces from feature names. 
+    - Some ordinal columns such as fireplace qu, garage_qual, exter_qual, and electrical columns were converted into numerical values to better assess their impact on saleprice 
+2. EDA:
+    - Initially we built a heatmap to see any strong correlations between saleprice and other columns. 
+    - We also looked at if there were any significant differences between saleprice in various neighborhoods. 
+    - Year sold didn't seem to make a significant difference in saleprice (surprisingly, given that one of these years was 2008 when the financial crisis occured)
+    - We one hot encoded neighborhood and house style. 
+3. Feature Engineering/ polynomial features 
+    - We investigated whether or not there were stronger correlations with saleprice if we combined features such as garage cars, garage area 
     - **You are limited to models you've learned in class**. In other words, you cannot use XGBoost, Neural Networks or any other advanced model for this project.
 4. Evaluate your models!
     - consider your evaluation metrics
