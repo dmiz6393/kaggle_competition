@@ -18,17 +18,22 @@ Our success can be validated if we are able to answer the following:
 We analyzed and cleaned the data, then built a model using the following process: 
 
 ### Cleaning the data
+
     - We found that some ordinal and nominal values had NaN, instead of NA. We replaced this with either NA or None (indicated in the data dictionary). 
     - Other null values such as Lot Frontage or Garage Yr Built were replaced with mean values of those columns (there wasn't a sigificant difference between mean and median values). 
     - The rest of the null values were dropped, being that there were only 1 or 2 of them in each respective remaining category. 
     - We also made sure to lowercase and remove spaces from feature names. 
     - Some ordinal columns such as fireplace qu, garage_qual, exter_qual, and electrical columns were converted into numerical values to better assess their impact on saleprice 
+    
 ### EDA:
+
     - Initially we built a heatmap to see any strong correlations between saleprice and other columns. 
     - We also looked at if there were any significant differences between saleprice in various neighborhoods. 
     - Year sold didn't seem to make a significant difference in saleprice (surprisingly, given that one of these years was 2008 when the financial crisis occured)
     - We one hot encoded neighborhood and house style. 
+    
 ### Feature Engineering/ polynomial features 
+
     - We investigated whether or not there were stronger correlations with saleprice if we combined features such as garage cars, garage area, kitchen quality and kitchen number of kitchens. We did this for both train and test data and found there were stronger correlations when we put our features together! 
 
 ## Conclusions, Limitations, and Future Work
