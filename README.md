@@ -15,11 +15,13 @@ Our success can be validated if we are able to answer the following:
 
 ## The Modeling Process and Executive Summary
 
-We analyzed and cleaned the data, then built a model using the following process: 
+This was an in class kaggle competition. My model won for the best RMSE score: https://www.kaggle.com/c/dsi-smd-1-project-2-regression-challenge/leaderboard
+
+I analyzed and cleaned the data, then built a model using the following process: 
 
 ### Cleaning the data
 
-   - We found that some ordinal and nominal values had NaN, instead of NA. We replaced this with either NA or None (indicated in the data dictionary). 
+   - Found that some ordinal and nominal values had NaN, instead of NA. We replaced this with either NA or None (indicated in the data dictionary). 
    - Other null values such as Lot Frontage or Garage Yr Built were replaced with mean values of those columns (there wasn't a sigificant difference between mean and median values). 
    - The rest of the null values were dropped, being that there were only 1 or 2 of them in each respective remaining category. 
    - We also made sure to lowercase and remove spaces from feature names. 
@@ -27,14 +29,14 @@ We analyzed and cleaned the data, then built a model using the following process
     
 ### EDA:
 
-   - Initially we built a heatmap to see any strong correlations between saleprice and other columns. 
-   - We also looked at if there were any significant differences between saleprice in various neighborhoods. 
+   - Initially built a heatmap to see any strong correlations between saleprice and other columns. 
+   - Looked at if there were any significant differences between saleprice in various neighborhoods. 
    - Year sold didn't seem to make a significant difference in saleprice (surprisingly, given that one of these years was 2008 when the financial crisis occured)
-   - We one hot encoded neighborhood and house style. 
+   - One hot encoded neighborhood and house style. 
     
 ### Feature Engineering/ polynomial features 
 
-   - We investigated whether or not there were stronger correlations with saleprice if we combined features such as garage cars, garage area, kitchen quality and kitchen number of kitchens. We did this for both train and test data and found there were stronger correlations when we put our features together! 
+   - Investigated whether or not there were stronger correlations with saleprice if we combined features such as garage cars, garage area, kitchen quality and kitchen number of kitchens. We did this for both train and test data and found there were stronger correlations when we put our features together! 
 
 ## Conclusions, Limitations, and Future Work
 
@@ -60,4 +62,4 @@ I believe we can be profitable if we focus our attention on:
 - Ensure garage quality is up to par, and if house does not have a garage, build a garage that can fit at least two cars for it 
 - Renovations alone on the house will increase the value! 
 
-For further investigation, we would need to do some hypothesis testing. I am going to continue to feature engineer to see if we've missed any important features that, when put together, impact price. I'd also like to experiment with cleaning the data differently - perhaps using the mean scores for some rows wasn't the best approach. I would also add the above ground square footage and below ground square footage to get the total square footage and add this as a potential feautre in my model. We were limited in valuable information such as average age of house (investopedia predicted that this was an important factor in sales price). 
+I'd like to go back to make sure I've written my code efficiently. For further investigation, we would need to do some hypothesis testing. I am going to continue to feature engineer to see if we've missed any important features that, when put together, impact price. I'd also like to experiment with cleaning the data differently - perhaps using the mean scores for some rows wasn't the best approach. I would add the above ground square footage and below ground square footage to get the total square footage and add this as a potential feautre in my model. We were limited in valuable information such as average age of house (investopedia predicted that this was an important factor in sales price). 
